@@ -20,7 +20,7 @@ mysql.init_app(app)
 def index():
     user = {'username': 'KofiO'}
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM IS218.IS218_db')
+    cursor.execute('SELECT * FROM citiesData ')
     result = cursor.fetchall()
     return render_template('index.html', title='Home', user=user, cities=result)
 
@@ -28,7 +28,7 @@ def index():
 @app.route('/view/<int:city_id>', methods=['GET'])
 def record_view(city_id):
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM IS218.IS218_db WHERE id=%s', city_id)
+    cursor.execute('SELECT * FROM citiesData WHERE id=%s', city_id)
     result = cursor.fetchall()
     return render_template('view.html', title='View Form', city=result[0])
 
