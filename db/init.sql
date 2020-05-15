@@ -1,6 +1,7 @@
 CREATE DATABASE citydb;
 use citydb;
 CREATE TABLE IF NOT EXISTS citydb1 (
+    `id` int AUTO_INCREMENT,
     `LatD` INT,
     `LatM` INT,
     `Lats` INT,
@@ -11,6 +12,7 @@ CREATE TABLE IF NOT EXISTS citydb1 (
     `EW` VARCHAR(3) CHARACTER SET utf8,
     `City` VARCHAR(20) CHARACTER SET utf8,
     `State` VARCHAR(2) CHARACTER SET utf8
+    PRIMARY KEY (`id`)
 );
 INSERT INTO citydb1 VALUES
     (41,5,59,'"N"',80,39,0,'"W"','"Youngstown"','OH'),
